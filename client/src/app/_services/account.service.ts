@@ -27,6 +27,10 @@ export class AccountService {
       );
   }
 
+  setCurrentUser(user: User){
+    this.currentUserSource.next(user);
+  }
+
   logOut(){
     localStorage.removeItem('user');
     this.currentUserSource.next(null);
